@@ -1,4 +1,4 @@
-$(document).scroll(function(){
+$(document).scroll(function() {
   if($(document).width() < 1024)
     return false;
 
@@ -7,6 +7,7 @@ $(document).scroll(function(){
   else
     $("header").removeClass("fixed");
 });
+
 
 function slowScroll(id) {
   $("html, body").animate({
@@ -21,13 +22,16 @@ $(".header .menu").on("click", function() {
   else
     $(this).html('<i class="fa-solid fa-xmark"></i>');
 
-
   $("header .mobile-menu").slideToggle();
 });
 
 $('.video-play img, #modal_video .close_button').on('click', function() {
   $("#modal_video").toggle();
   $("body").toggleClass("overflow-hidden");
+  if($("#modal_video").is(":visible"))
+    $("header").addClass("none");
+  else
+    $("header").removeClass("none");
   resizeVideo();
 });
 
