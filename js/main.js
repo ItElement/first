@@ -35,6 +35,7 @@ $('.video-play img, #modal_video .close_button').on('click', function() {
   resizeVideo();
 });
 
+
 $(window).on('resize', function() {
   resizeVideo();
 }).resize();
